@@ -51,17 +51,26 @@
 &lt;br&gt;
 &lt;br&gt;
 
-&lt;div class=&#34;mw6 tr bb&#34;&gt;
+&lt;div class=&#34;mw6 tc&#34;&gt;
 
 Grant Wythoff&lt;br&gt;Center for Digital Humanities&lt;br&gt;Princeton University
 
+&lt;br&gt;
+
 &lt;/div&gt;
+
+&lt;div class=&#39;tc&#39;&gt;░░░░░░░░░░░░░░░░░░░░░&lt;/div&gt;
 
 # Literary {#lit}
 
 - [How far in the future are works of speculative fiction set?]({{&lt; ref &#34;/future&#34; &gt;}})
+- [Prevalence of first-person, third-person, and epistolary novels, 1660-1850]({{&lt; ref &#34;/narrative&#34; &gt;}})
+
+&lt;div class=&#39;tc&#39;&gt;░░░░░░░░░░░░░░░░░░░░░&lt;/div&gt;
 
 # Astronomical {#astro}
 
 - [Chart of exoplanet discoveries to date, by orbital period and mass.]({{&lt; ref &#34;/exoplanets&#34; &gt;}})
+
+&lt;div class=&#39;tc&#39;&gt;░░░░░░░░░░░░░░░░░░░░░&lt;/div&gt;
  

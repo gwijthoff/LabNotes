@@ -6,8 +6,21 @@
 	<h1 class="f-subheadline">{{ .Params.Title }}<h1>
 </div>
 
-<div class="mw7 center measure pa3">
+<div class="tc">
+
 	{{ .Content }}
+	<br>
+	░░░░░░░░░░░░░░░░░░░░░
+
+	<br>
+
+	<p class="f1-ns f2 lh-title tc">
+		<a href="{{ .Site.Params.baseURL | relURL }}" class="title">Visualization<br>Test</p>
+
+	░░░░░░░░░░░░░░░░░░░░░
+
 </div>
+
+
 
 {{ end }}
