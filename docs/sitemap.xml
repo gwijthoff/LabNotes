@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/exoplanets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/future/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/orders/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gwijthoff.github.io/viztest/</loc>
+  </url>
+  
+</urlset>
