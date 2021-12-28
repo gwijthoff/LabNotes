@@ -69,8 +69,6 @@ During my research, I periodically like to take snapshots of just one of the wor
 - [Prevalence of first-person, third-person, and epistolary novels, 1660-1850]({{< ref "/narrative" >}})
 - [Chart of exoplanet discoveries to date, by orbital period and mass]({{< ref "/exoplanets" >}})
 
-{{< future >}}
-
 # Guiding Questions
 
 **RACE AND ARCHIVES:** How can standard bibliographies like the Internet Speculative Fiction Database and Worlds Without End be made more representative of nonwhite authors whose writings were excluded from mainstream pulp and SF venues? How can our data collection and analysis methods be made more responsive to emerging scholarship on the history of these diverse voices?
