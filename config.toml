@@ -1,6 +1,6 @@
-baseURL = "https://gwijthoff.github.io/viztest/"
+baseURL = "https://gwijthoff.github.io/labnotes/"
 languageCode = "en-us"
-title = "Visualization Tests"
+title = "Lab Notes"
 theme = "texting-hugo"
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 enableEmoji = true

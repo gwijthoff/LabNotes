@@ -35,10 +35,10 @@
 	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
 	
-	<link rel="stylesheet" href="/viztest/css/style.min.33915d3e0f22cccdb764fbd10b66f1e14568526a795a8760fee58c340d9d6d26.css">
+	<link rel="stylesheet" href="/labnotes/css/style.min.33915d3e0f22cccdb764fbd10b66f1e14568526a795a8760fee58c340d9d6d26.css">
 
 	
-	<link rel="alternate" type="text/plain" href="https://gwijthoff.github.io/viztest/overview/index.txt">
+	<link rel="alternate" type="text/plain" href="https://gwijthoff.github.io/labnotes/overview/index.txt">
 	</head>
 <body>
 	
@@ -52,26 +52,56 @@
 <div class="tc">
 
 	<div class="mw6 center pa3 tc">
-<h3 id="in-altairhttpsaltair-vizgithubiobrunless-otherwise-noted">In <a href="https://altair-viz.github.io/">Altair</a>,<br>unless otherwise noted.</h3>
+<h3 id="research-datadatabr-codecode-and-sketchesvizbron-the-history-and-futurebr-of-space-opera">Research <a href="#data">data</a>,<br> <a href="#code">code</a>, and <a href="#viz">sketches</a><br>on the history and future<br> of space opera.</h3>
 </div>
+<div class='tc'>✦</div>
 <br>
-<br>
-<div class="mw6 tc">
+<p>At a time when prominent SF authors have turned to climate fiction, a younger generation of writers has instead begun publishing stories of interplanetary exploration. These Afrofuturist (Tade Thompson, Nnedi Okorafor), transgender (Yoon Ha Lee, Charlie Jane Anders), and Chinese (Hao Jingfang, Liu Cixin) authors are redefining space opera despite its roots in the toxic idea that we can simply move on and settle another planet if this one is ruined.</p>
+<p>This project in progress situates the new wave of space opera amid a computationally-inflected history of the subgenre by comparing literary data at different resolutions with astronomical data like NASA’s Exoplanet Archive.</p>
+<p><em>All datasets, visualizations, and code below are custom unless otherwise noted.</em></p>
+<div class="mw6 tr">
 <p>Grant Wythoff<br>Center for Digital Humanities<br>Princeton University</p>
 <br>
 </div>
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
-<h1 id="lit">Literary</h1>
+<h1 id="code">Exploratory Text Analysis</h1>
+<p>Modeling literary data is like counting fish in the sea: no method will fully capture the wide diversity and deep nuance of what&rsquo;s there. A trawler drags a harmful net across the ocean floor, paying no regard to local ecologies and scooping up everything in its path, like this <a href="https://www.kaggle.com/jannesklaas/scifi-stories-text-corpus">single Internet Archive text file</a>, containing 150 MB of bulk OCR&rsquo;d pulp magazine text from 1845 to the present in multiple languages. A taxonomist carefully catches (and hopefully releases) unique specimens that are representative of a species, like the 189 novels published by Orion&rsquo;s <a href="https://en.wikipedia.org/wiki/SF_Masterworks">SF Masterworks series</a> that represent a particular critical vision of speculative fiction.</p>
+<p>Somewhere between the two scales of collection above, pole-and-line fishers have a good idea of what they&rsquo;re trying to catch, a method for catching a lot of it, and are often surprised by what they find. This is the path I&rsquo;ve been taking: starting with standard bibliographies of SF and using them to explore patterns in the full text of those works hosted by HathiTrust Research Center. While all of these models are &ldquo;wrong,&rdquo; some are useful.</p>
+<p><strong><em><div class='tc'>Number of speculative fiction novels<br>collected from HathiTrust, by decade:</div></em></strong></p>
+<pre><code>1900s ░ 35
+1910s ░ 40
+1920s ░ 39
+1930s  19
+1940s ░ 49
+1950s ░░░░░ 192
+1960s ░░░░░░░░░ 323
+1970s ░░░░░░░░░░░░░░░░░░░░ 710
+1980s ░░░░░░░░░░░░░░░░░░ 654
+1990s ░░░░░░░░░░░░░░░░ 576
+2000s ░░░░░░░░░░░░░░░░░ 594
+</code></pre><h4 id="replicate-my-data-collection-in-this--python-notebook-httpsgithubcomgwijthoffhtrc_sf_experiments-for-accessing-and-analyzing-3248-twentieth-century-speculative-fiction-novels-via-hathitrust">Replicate my data collection in this <a href="https://github.com/gwijthoff/HTRC_SF_experiments/">✦ Python notebook ✦</a> for accessing and analyzing 3,248 twentieth-century speculative fiction novels via HathiTrust.</h4>
+<p>During my research, I periodically like to take snapshots of just one of the works in this big collection. Writing Python in DrawBot allows you to pull the metadata for each book, take a sample of random tokens, performs term frequency / inverse document drequency (TF-IDF) analysis, and typeset the results by calculating the appropriate font sizes.</p>
+<p><a href="https://github.com/gwijthoff/data-summarize/"><img src="https://raw.githubusercontent.com/gwijthoff/data-summarize/main/output/Delany_1967_THE%20EINSTEIN%20INTERSECTION%20.png" alt=""></a></p>
+<h4 id="use-my--drawbot-script-httpsgithubcomgwijthoffdata-summarize-for-simultaneously-analyzing-the-text-of-a-novel-and-typesetting-the-results">Use my <a href="https://github.com/gwijthoff/data-summarize/">✦ DrawBot script ✦</a> for simultaneously analyzing the text of a novel and typesetting the results.</h4>
+<h1 id="data">Data Curation</h1>
 <ul>
-<li><a href="https://gwijthoff.github.io/viztest/future/">How far in the future are works of speculative fiction set?</a></li>
-<li><a href="https://gwijthoff.github.io/viztest/narrative/">Prevalence of first-person, third-person, and epistolary novels, 1660-1850</a></li>
+<li><a href="https://github.com/gwijthoff/TimeHorizons">Time Horizons of Speculative Fiction</a></li>
+<li><a href="https://github.com/gwijthoff/exoplanets">Live-updated data from the NASA Exoplanet Archive</a></li>
+<li><a href="https://gist.github.com/gwijthoff/d8af3b328686a0450733d7af98940395">SF works ranked by number of award nominations and anthology re-publications, 1551–2020</a> (Classics of SF)</li>
 </ul>
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
-<h1 id="astro">Astronomical</h1>
+<h1 id="viz">Visualizations</h1>
 <ul>
-<li><a href="https://gwijthoff.github.io/viztest/exoplanets/">Chart of exoplanet discoveries to date, by orbital period and mass.</a></li>
+<li><a href="https://gwijthoff.github.io/labnotes/future/">How far in the future are works of speculative fiction set?</a></li>
+<li><a href="https://gwijthoff.github.io/labnotes/narrative/">Prevalence of first-person, third-person, and epistolary novels, 1660-1850</a></li>
+<li><a href="https://gwijthoff.github.io/labnotes/exoplanets/">Chart of exoplanet discoveries to date, by orbital period and mass</a></li>
 </ul>
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
+<h1 id="guiding-questions">Guiding Questions</h1>
+<p><strong>RACE AND ARCHIVES:</strong> How can standard bibliographies like the Internet Speculative Fiction Database and Worlds Without End be made more representative of nonwhite authors whose writings were excluded from mainstream pulp and SF venues? How can our data collection and analysis methods be made more responsive to emerging scholarship on the history of these diverse voices?</p>
+<p><strong>DISTANCE &amp; GENRE:</strong> Does a narrative world&rsquo;s distance from the Earth correlate with genre differences? Are works set farther away (either in terms of real stellar setting or distance measurements in the text) more closely tied to fantasy? Are works set closer to our solar system associated with &ldquo;hard&rdquo; SF?</p>
+<p><strong>NEOLOGY &amp; NOVUMS:</strong> How can we use automated methods to measure a text&rsquo;s density of invented names (neology) for imaginary things (novums)? Can named-entity recognition (NER) detect fictional place names or speculative technologies?</p>
+<p><strong>CHARACTER NETWORKS:</strong> How has the gender of characters changed from golden age to contemporary SF? Have defining space opera features like the heroic central character and the quest narrative changed in works of the 2010s and 2020s?</p>
+<p><strong>TEMPORALITY:</strong> How far in the future is a work of space opera likely to be set? Has that future horizon shifted from golden age to contemporary SF?</p>
+<br>
+<div class='tc'>✦</div>
 
 	<br>
 	░░░░░░░░░░░░░░░░░░░░░
@@ -79,7 +109,7 @@
 	<br>
 
 	<p class="f1-ns f2 lh-title tc">
-		<a href="/viztest/" class="title">Visualization<br>Test</p>
+		<a href="/labnotes/" class="title">Lab<br>Notes</p>
 
 	░░░░░░░░░░░░░░░░░░░░░
 
@@ -89,7 +119,7 @@
 
 
 	<footer>
-	<h4 id="bottom" class="tc"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="width:15px;height:15px;border-width:0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/64px-Cc.logo.circle.svg.png" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | 2021
+	<h4 id="bottom" class="tc"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="width:15px;height:15px;border-width:0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/64px-Cc.logo.circle.svg.png" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | 2021 | 🚧
 </footer>
 
 </body>

@@ -5,14 +5,21 @@ layout: single
 
 <div class="mw6 center pa3 tc">
 
-### In [Altair](https://altair-viz.github.io/),<br>unless otherwise noted.
+### Research [data](#data),<br> [code](#code), and [sketches](#viz)<br>on the history and future<br> of space opera.
 
 </div>
 
-<br>
+<div class='tc'>✦</div>
+
 <br>
 
-<div class="mw6 tc">
+At a time when prominent SF authors have turned to climate fiction, a younger generation of writers has instead begun publishing stories of interplanetary exploration. These Afrofuturist (Tade Thompson, Nnedi Okorafor), transgender (Yoon Ha Lee, Charlie Jane Anders), and Chinese (Hao Jingfang, Liu Cixin) authors are redefining space opera despite its roots in the toxic idea that we can simply move on and settle another planet if this one is ruined.
+
+This project in progress situates the new wave of space opera amid a computationally-inflected history of the subgenre by comparing literary data at different resolutions with astronomical data like NASA’s Exoplanet Archive.
+
+*All datasets, visualizations, and code below are custom unless otherwise noted.*
+
+<div class="mw6 tr">
 
 Grant Wythoff<br>Center for Digital Humanities<br>Princeton University
 
@@ -20,17 +27,60 @@ Grant Wythoff<br>Center for Digital Humanities<br>Princeton University
 
 </div>
 
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
+# Exploratory Text Analysis {#code}
 
-# Literary {#lit}
+Modeling literary data is like counting fish in the sea: no method will fully capture the wide diversity and deep nuance of what's there. A trawler drags a harmful net across the ocean floor, paying no regard to local ecologies and scooping up everything in its path, like this [single Internet Archive text file](https://www.kaggle.com/jannesklaas/scifi-stories-text-corpus), containing 150 MB of bulk OCR'd pulp magazine text from 1845 to the present in multiple languages. A taxonomist carefully catches (and hopefully releases) unique specimens that are representative of a species, like the 189 novels published by Orion's [SF Masterworks series](https://en.wikipedia.org/wiki/SF_Masterworks) that represent a particular critical vision of speculative fiction.
+
+Somewhere between the two scales of collection above, pole-and-line fishers have a good idea of what they're trying to catch, a method for catching a lot of it, and are often surprised by what they find. This is the path I've been taking: starting with standard bibliographies of SF and using them to explore patterns in the full text of those works hosted by HathiTrust Research Center. While all of these models are "wrong," some are useful.
+
+**_<div class='tc'>Number of speculative fiction novels<br>collected from HathiTrust, by decade:</div>_**
+
+```
+1900s ░ 35
+1910s ░ 40
+1920s ░ 39
+1930s  19
+1940s ░ 49
+1950s ░░░░░ 192
+1960s ░░░░░░░░░ 323
+1970s ░░░░░░░░░░░░░░░░░░░░ 710
+1980s ░░░░░░░░░░░░░░░░░░ 654
+1990s ░░░░░░░░░░░░░░░░ 576
+2000s ░░░░░░░░░░░░░░░░░ 594
+```
+
+#### Replicate my data collection in this [✦ Python notebook ✦](https://github.com/gwijthoff/HTRC_SF_experiments/) for accessing and analyzing 3,248 twentieth-century speculative fiction novels via HathiTrust.
+
+During my research, I periodically like to take snapshots of just one of the works in this big collection. Writing Python in DrawBot allows you to pull the metadata for each book, take a sample of random tokens, performs term frequency / inverse document drequency (TF-IDF) analysis, and typeset the results by calculating the appropriate font sizes.
+
+[![](https://raw.githubusercontent.com/gwijthoff/data-summarize/main/output/Delany_1967_THE%20EINSTEIN%20INTERSECTION%20.png)](https://github.com/gwijthoff/data-summarize/)
+
+#### Use my [✦ DrawBot script ✦](https://github.com/gwijthoff/data-summarize/) for simultaneously analyzing the text of a novel and typesetting the results.
+
+# Data Curation {#data}
+
+- [Time Horizons of Speculative Fiction](https://github.com/gwijthoff/TimeHorizons)
+- [Live-updated data from the NASA Exoplanet Archive](https://github.com/gwijthoff/exoplanets)
+- [SF works ranked by number of award nominations and anthology re-publications, 1551–2020](https://gist.github.com/gwijthoff/d8af3b328686a0450733d7af98940395) (Classics of SF)
+
+# Visualizations {#viz}
 
 - [How far in the future are works of speculative fiction set?]({{< ref "/future" >}})
 - [Prevalence of first-person, third-person, and epistolary novels, 1660-1850]({{< ref "/narrative" >}})
+- [Chart of exoplanet discoveries to date, by orbital period and mass]({{< ref "/exoplanets" >}})
 
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
+# Guiding Questions
 
-# Astronomical {#astro}
+**RACE AND ARCHIVES:** How can standard bibliographies like the Internet Speculative Fiction Database and Worlds Without End be made more representative of nonwhite authors whose writings were excluded from mainstream pulp and SF venues? How can our data collection and analysis methods be made more responsive to emerging scholarship on the history of these diverse voices?
 
-- [Chart of exoplanet discoveries to date, by orbital period and mass.]({{< ref "/exoplanets" >}})
+**DISTANCE & GENRE:** Does a narrative world's distance from the Earth correlate with genre differences? Are works set farther away (either in terms of real stellar setting or distance measurements in the text) more closely tied to fantasy? Are works set closer to our solar system associated with "hard" SF?
 
-<div class='tc'>░░░░░░░░░░░░░░░░░░░░░</div>
+**NEOLOGY & NOVUMS:** How can we use automated methods to measure a text's density of invented names (neology) for imaginary things (novums)? Can named-entity recognition (NER) detect fictional place names or speculative technologies?
+
+**CHARACTER NETWORKS:** How has the gender of characters changed from golden age to contemporary SF? Have defining space opera features like the heroic central character and the quest narrative changed in works of the 2010s and 2020s?
+
+**TEMPORALITY:** How far in the future is a work of space opera likely to be set? Has that future horizon shifted from golden age to contemporary SF?
+
+<br>
+
+<div class='tc'>✦</div>
