@@ -62,7 +62,7 @@
 </div>
 <div class='tc'>✦</div>
 <br>
-<p>At a time when prominent SF authors have turned to climate fiction, a younger generation of writers has instead begun publishing stories of interplanetary exploration. These Afrofuturist (Tade Thompson, Nnedi Okorafor), transgender (Yoon Ha Lee, Charlie Jane Anders), and Chinese (Hao Jingfang, Liu Cixin) authors are redefining space opera despite its roots in the toxic idea that we can simply move on and settle another planet if this one is ruined.</p>
+<p>At a time when prominent speculative fiction authors have turned to near-future climate fiction, a younger generation of writers has instead begun publishing stories of interplanetary exploration set centuries from now. These Afrofuturist (Tade Thompson, Nnedi Okorafor), transgender (Yoon Ha Lee, Charlie Jane Anders), and Chinese (Hao Jingfang, Liu Cixin) authors are redefining space opera despite its roots in the toxic idea that we can simply move on and settle another planet if this one is ruined.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>This project in progress situates the new wave of space opera amid a computationally-inflected history of the subgenre by comparing literary data at different resolutions with astronomical data like NASA’s Exoplanet Archive.</p>
 <p><em>All datasets, visualizations, and code below are custom unless otherwise noted.</em></p>
 <div class="mw6 tr">
@@ -71,8 +71,8 @@
 </div>
 <h1 id="code">Exploratory Text Analysis</h1>
 <p>Modeling literary data is like counting fish in the sea: no method will fully capture the wide diversity and deep nuance of what&rsquo;s there. A trawler drags a harmful net across the ocean floor, paying no regard to local ecologies and scooping up everything in its path, like this <a href="https://www.kaggle.com/jannesklaas/scifi-stories-text-corpus">single Internet Archive text file</a>, containing 150 MB of bulk OCR&rsquo;d pulp magazine text from 1845 to the present in multiple languages. A taxonomist carefully catches (and hopefully releases) unique specimens that are representative of a species, like the 189 novels published by Orion&rsquo;s <a href="https://en.wikipedia.org/wiki/SF_Masterworks">SF Masterworks series</a> that represent a particular critical account of speculative fiction.</p>
-<p>Somewhere between the two scales of collection above, pole-and-line fishers have a good idea of what they&rsquo;re trying to catch, a method for catching a lot of it, and are often surprised by what they find. This is the path I&rsquo;ve been taking: starting with standard bibliographies of SF and using them to explore patterns in the full text of those works hosted by HathiTrust Research Center. While all of these models are &ldquo;wrong,&rdquo; some are useful.</p>
-<p><strong><em><div class='tc'>Number of speculative fiction novels<br>collected from HathiTrust, by decade:</div></em></strong></p>
+<p>Somewhere between the two scales of collection above, pole-and-line fishers have a good idea of what they&rsquo;re trying to catch, a method for catching a lot of it, and are often surprised by what they find. This is the path I&rsquo;ve been taking: starting with standard bibliographies of English-language SF and using them to explore patterns in the full text of those works hosted by HathiTrust Research Center. While all of these models are &ldquo;wrong,&rdquo; some are useful.</p>
+<p><strong><em><div class='tc'>Number of speculative fiction novels<br>collected from HathiTrust, by decade<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></div></em></strong></p>
 <pre><code>1900s ░ 35
 1910s ░ 40
 1920s ░ 39
@@ -85,26 +85,26 @@
 1990s ░░░░░░░░░░░░░░░░ 576
 2000s ░░░░░░░░░░░░░░░░░ 594
 </code></pre><h4 id="replicate-my-data-collection-in-this--python-notebook-httpsgithubcomgwijthoffhtrc_sf_experiments-for-accessing-and-analyzing-3248-twentieth-century-speculative-fiction-novels-via-hathitrust">Replicate my data collection in this <a href="https://github.com/gwijthoff/HTRC_SF_experiments/">✦ Python notebook ✦</a> for accessing and analyzing 3,248 twentieth-century speculative fiction novels via HathiTrust.</h4>
-<p>During my research, I periodically like to take snapshots of just one of the works in this big collection. Writing Python in DrawBot allows you to pull the metadata for each book, take a sample of random tokens, performs term frequency / inverse document drequency (TF-IDF) analysis, and typeset the results by calculating the appropriate font sizes.</p>
+<p>During my research, I periodically like to take snapshots of just one of the novels in this large collection. For a project I called &ldquo;Data, Summarize,&rdquo; I used DrawBot to write Python code allowing me to analyze my data and typeset the results in the same script. In the text analysis &ldquo;broadside&rdquo; below, I pull the bibliographic metadata for each book from HathiTrust Research Center (HTRC), including publisher, place, and identifier from OCLC, the global library cooperative behind WorldCat. I then take a sample of random words (or &ldquo;tokens&rdquo; in the parlance of natural language processing) from the novel, and perform term frequency / inverse document drequency (TF-IDF) analysis to produce a list of the tokens that are most distinctive to <em>this</em> novel as opposed to others in the collection. Finally, I typeset the results by calculating the appropriate font sizes for the page dimensions. Each time the script loads, it pulls in a new novel and prints a broadside like the one below.</p>
 <p><a href="https://github.com/gwijthoff/data-summarize/"><img src="https://raw.githubusercontent.com/gwijthoff/data-summarize/main/output/Delany_1967_THE%20EINSTEIN%20INTERSECTION%20.png" alt=""></a></p>
 <h4 id="use-my--drawbot-script-httpsgithubcomgwijthoffdata-summarize-for-simultaneously-analyzing-the-text-of-a-novel-and-typesetting-the-results">Use my <a href="https://github.com/gwijthoff/data-summarize/">✦ DrawBot script ✦</a> for simultaneously analyzing the text of a novel and typesetting the results.</h4>
-<h1 id="data">Data Curation</h1>
-<ul>
-<li><a href="https://github.com/gwijthoff/TimeHorizons">Time Horizons of Speculative Fiction</a></li>
-<li><a href="https://github.com/gwijthoff/exoplanets">Live-updated data from the NASA Exoplanet Archive</a></li>
-<li><a href="https://gist.github.com/gwijthoff/d8af3b328686a0450733d7af98940395">SF works ranked by number of award nominations and anthology re-publications, 1551–2020</a> (Classics of SF)</li>
-</ul>
 <h1 id="viz">Visualizations</h1>
 <ul>
-<li><a href="https://gwijthoff.github.io/labnotes/future/">How far in the future are works of speculative fiction set?</a></li>
+<li><a href="https://gwijthoff.github.io/labnotes/future/">How far in the future are works of speculative fiction set?</a> (in process)</li>
 <li><a href="https://gwijthoff.github.io/labnotes/narrative/">Prevalence of first-person, third-person, and epistolary novels, 1660-1850</a></li>
 <li><a href="https://gwijthoff.github.io/labnotes/exoplanets/">Chart of exoplanet discoveries to date, by orbital period and mass</a></li>
 </ul>
+<h1 id="data">Data Curation</h1>
+<ul>
+<li><a href="https://github.com/gwijthoff/TimeHorizons">Time Horizons of Speculative Fiction</a> (in process)</li>
+<li><a href="https://github.com/gwijthoff/exoplanets">Live-updated data from the NASA Exoplanet Archive</a></li>
+<li><a href="https://gist.github.com/gwijthoff/d8af3b328686a0450733d7af98940395">SF works ranked by number of award nominations and anthology re-publications, 1551–2020 (Classics of SF)</a></li>
+</ul>
 <h1 id="guiding-questions">Guiding Questions</h1>
-<p><span class="small-caps b">Race &amp; Archives</span></p>
-<p>How can standard bibliographies like the Internet Speculative Fiction Database and Worlds Without End be made more representative of nonwhite authors who were excluded from mainstream pulp magazines and SF publishers? How can our data collection and analysis methods be made more responsive to emerging scholarship on the history of these diverse voices?</p>
+<p><span class="small-caps b">Race, Gender, &amp; Archives</span></p>
+<p>How can standard bibliographies like the Internet Speculative Fiction Database and Worlds Without End be made more representative of Black and women authors who were excluded from mainstream pulp magazines and SF publishers? How can our data collection and analysis methods be made more responsive to emerging scholarship on the history of these diverse voices?</p>
 <p><span class="small-caps b">Distance &amp; Genre</span></p>
-<p>Does a narrative world&rsquo;s distance from the Earth correlate with genre differences? Are works set farther away (either in terms of real stellar setting or distance measurements in the text) more closely tied to fantasy? Are works set closer to our solar system associated with &ldquo;hard&rdquo; SF?</p>
+<p>Does a narrative world&rsquo;s distance from the Earth correlate with genre differences? Are works set farther away (either in terms of actual stellar setting or distance measurements in the text) more closely tied to fantasy? Are works set closer to our solar system associated with &ldquo;hard&rdquo; SF?</p>
 <p><span class="small-caps b">Neology &amp; Novums</span></p>
 <p>How can we use automated methods to measure a text&rsquo;s density of invented names (neology) for imaginary things (novums)? Can named-entity recognition (NER) detect fictional place names or speculative technologies?</p>
 <p><span class="small-caps b">Character Networks</p>
@@ -113,6 +113,18 @@
 <p>How far in the future is a work of space opera likely to be set? Has that future horizon shifted from golden age to contemporary SF?</p>
 <br>
 <div class='tc'>✦</div>
+<br>
+<br><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>While <a href="https://lithub.com/please-stop-talking-about-the-rise-of-african-science-fiction/">Tade Thompson sees</a> &ldquo;Afrofuturism&rdquo; as an umbrella term that is beginning to encompass work by authors both from the African continent and the African diaspora, <a href="https://nnedi.blogspot.com/2019/10/africanfuturism-defined.html">Nnedi Okorafor distinguishes</a> her work as Africanfuturist: &ldquo;specifically and more directly rooted in African culture, history, mythology and point-of-view.&rdquo; <a href="https://www.sfsignal.com/archives/2015/03/exclusive-interview-yoon-ha-lee-operation-arcana-story-graphology-hemorrhage/">Yoon Ha Lee</a> and <a href="https://www.them.us/story/gavilan-rayna-russom-charlie-jane-anders-envoy-new-album-interview">Charlie Jane Anders</a> have both discussed the ways that SF has represented for them &ldquo;permission and empowerment to not fit into conventional social norms.&rdquo; For context on the meteoric rise of Chinese SF over the past decade, see the special issue of <em>SFRA Review</em> on &ldquo;<a href="https://sfrareview.org/vol-51-no-2-spring-2021/">Chinese Science Fiction and the World</a>.&rdquo; <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>The initial list of 3,248 novels was scraped from <a href="https://www.worldswithoutend.com/">Worlds Without End</a>, an exhaustive, fan-managed bibliography of speculative fiction. The list thus reflects the preferences and biases of a particularly engaged, technically-savvy community of readers. Another approach would be to start with the <a href="https://csfquery.com/">Classics of Science Fiction</a> database, which ranks SF novels by the number of award nominations they receive and &ldquo;best-of&rdquo; lists they appear on. We could also cross-reference that list with the <a href="https://opensyllabus.org/">Open Syllabus Explorer</a> — a database of 7 million syllabi — to find the SF novels most often taught in U.S. college courses. Finally, we could combine these three bibliographies, removing duplicates, in order to see how the textual patterns we&rsquo;re interested in respond to different forms of selection and curation by fans, critics, and professors. For more detail, see <a href="https://github.com/gwijthoff/HTRC_SF_experiments/blob/main/htrc_sf_experiments.ipynb">my Python notebook</a> documenting the data collection process. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
  
 </div>
 
@@ -120,7 +132,7 @@
 
 
 	<footer>
-	<h4 id="bottom" class="tc"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="width:15px;height:15px;border-width:0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/64px-Cc.logo.circle.svg.png" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | 2021 | 🚧
+	<h4 id="bottom" class="tc"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="width:15px;height:15px;border-width:0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/64px-Cc.logo.circle.svg.png" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a> | 2022 | 🚧
 </footer>
 
 </body>
